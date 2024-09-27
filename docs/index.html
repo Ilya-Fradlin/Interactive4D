@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="google-site-verification" content="QPBDjBshVKPivIRMQQwDWikbMtLBLr3S-wzAZq4ZXeg" />
+  <meta charset="utf-8">
+  <meta name="description" content="Interactive4D: Interactive 4D LiDAR Segmentation">
+  <meta name="keywords" content="4D Interactive Segmentation, Semantic Segmentation, 4D, Interactive4D">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive4D: Interactive 4D LiDAR Segmentation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Interactive4D <img src="logo.svg" class="center" width=100
+                alt="logo of the project"></h1>
+            <h1 class="title is-2 publication-title">Interactive 4D LiDAR Segmentation</h1>
+
+            <!-- <div class="column is-full_width"> -->
+            <!--   <h2 class="title is-4">conference</h2> -->
+            <!-- </div> -->
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/Ilya-Fradlin/">Ilya Fradlin</a></span>,
+              <span class="author-block">
+                <a href="https://www.vision.rwth-aachen.de/person/245/">Idil Esen Zulfikar</a></span>,
+              </span>
+              <span class="author-block">
+                <a href="https://github.com/YilmazKadir/">Kadir Yilmaz</a></span>,
+              </span> 
+              <span class="author-block">
+                <a href="https://theodorakontogianni.github.io/">Theodora Kontogianni</a></span>,
+              </span>  
+              <span class="author-block">
+                <a href="https://www.vision.rwth-aachen.de/person/1/">Bastian Leibe</a></span>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">RWTH Aachen University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2410.08206" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/Ilya-Fradlin/Interactive4D"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video autoplay muted loop style="width: 100%;">
+          <source src="https://omnomnom.vision.rwth-aachen.de/data/interactive4d/teaser_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <br><br>
+        <h2 class="subtitle has-text-centered">
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              <b>TL;DR: 
+                Interactive 4D segmentation is a new paradigm that segments multiple objects across consecutive LiDAR scans in a single step, 
+                improving efficiency and consistency while simplifying tracking and annotation.
+              </b>
+            </p>
+            <p>
+                Interactive segmentation has an important role in facilitating the annotation process of future LiDAR datasets. 
+                Existing approaches sequentially segment individual objects at each LiDAR scan, repeating the process throughout the entire sequence, 
+                which is redundant and ineffective. 
+            </p>  
+            <p>
+                In this work, we propose interactive 4D segmentation, a new paradigm that allows segmenting multiple objects on multiple LiDAR scans simultaneously, 
+                and Interactive4D, the first interactive 4D segmentation model that segments multiple objects on superimposed consecutive LiDAR scans in a single iteration by utilizing the sequential nature of LiDAR data. 
+                While performing interactive segmentation, our model leverages the entire space-time volume, leading to more efficient segmentation. 
+                Operating on the 4D volume, it directly provides consistent instance IDs over time and also simplifies tracking annotations. 
+            </p>
+            <p>
+                Moreover, we show that click simulations are crucial for successful model training on LiDAR point clouds. To this end, we design a click simulation strategy that is better suited for the
+                characteristics of LiDAR data. To demonstrate its accuracy and effectiveness, we evaluate Interactive4D on multiple LiDAR datasets, where Interactive4D achieves a new state-of-the-art by a large margin.  <br />
+                <!-- We will publicly release code and models upon acceptance. -->
+            </p>
+                
+          </div>
+        </div>
+      </div>
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <video controls poster="./static/images/poster.png">
+              <source src="https://omnomnom.vision.rwth-aachen.de/data/interactive4d/3min_explanation.mp4"
+                type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+      @article{fradlin2024interactive4d,
+        title     = {{Interactive4D: Interactive 4D LiDAR Segmentation}},
+        author    = {Fradlin, Ilya and Zulfikar, Idil Esen and Yilmaz, Kadir and Kontogianni, Thodora and Leibe, Bastian},
+        journal   = {arXiv preprint arXiv:2410.08206},
+        year      = {2024}
+      }
+      </code></pre>
+    </div>
+  </section>
+
+  <section class="section" id="Acknowledgment">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgment</h2>
+      We thank Yuanwen Yue, Daan de Geus, and Alexander Hermans for their helpful feedback and discussions. We also thank all our annotators who participated in the user study. Theodora Kontogianni is a postdoctoral research fellow at the ETH AI Center and her research is partially funded by the Hasler Stiftung Grant project (23069). Idil Esen Zulfikar’s research is funded by the BMBF project NeuroSys-D (03ZU1106DA). Kadir Yilmaz's research is funded by the Bosch-RWTH LHC project Context Understanding for Autonomous Systems. The computing resources for most of the experiments were granted by the Gauss Centre for Supercomputing e.V. through the John von Neumann Institute for Computing on the GCS Supercomputer JUWELS at Julich Supercomputing Centre.    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://github.com/YilmazKadir" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+              We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this
+              template.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
