@@ -1,0 +1,75 @@
+general:
+  debug: false # Options: true, false
+  mode: "train" # Options: train, validate
+  ckpt_path: /home/ckpt/interactive4d_sweep4.ckpt
+  gpus: null
+  seed: 42
+  dataset: semantickitti # Options: semantickitti, nuScenes_general, nuScenes_challenge, kitti360
+  rank_error_strategy: "SI" # Options: SI, BD.
+  initial_clicking_strategy: "centroid" # Options: centroid, random, boundary_dependent, dbscan.
+  refinement_clicking_strategy: "random" # Options: centroid, random, boundary_dependent, dbscan.
+  max_num_clicks: 10
+  max_clicks_per_obj: 40
+  iou_targets: [0.5, 0.65, 0.80, 0.85, 0.90]
+
+logging:
+  project_name: Interactive4D
+  workspace: USER_SPACE
+  entity: USER_ENTITY
+  save_dir: saved/${general.experiment_name}
+  visualization_frequency: 400
+  save_predictions: false # options: true, false
+
+modes:
+  # Separate mode for training and validation, merged into the general config
+  train:
+    general:
+      mode: "train"
+      experiment_name: now-Interactive4d_training
+    trainer:
+      num_devices: 1
+      num_nodes: 1
+
+  validate:
+    general:
+      mode: "validate"
+      experiment_name: now-Interactive4d_validation
+      prediction_dir: predictions/${general.experiment_name}/sequences/08/predictions/
+    trainer:
+      num_devices: 1
+      num_nodes: 1
+
+trainer:
+  accelerator: auto
+  max_epochs: 30
+  check_val_every_n_epoch: 50
+  log_every_n_steps: 100
+  limit_train_batches: null
+  limit_val_batches: null
+  num_sanity_val_steps: 1
+
+data:
+  datasets:
+    data_dir: datasets/jsons/
+    add_distance: true
+    sweep: 4
+    center_coordinates: true
+    window_overlap: 0
+    volume_augmentations_path: conf/augmentation/volumentations_aug.yaml
+  dataloader:
+    pin_memory: true
+    num_workers: 12
+    batch_size: 1
+    test_batch_size: 1
+    voxel_size: 0.1
+
+optimizer:
+  lr: 0.0002
+
+loss:
+  aux: true
+  w_min: 0.5
+  w_max: 2
+  delta: 2
+  bce_loss_coef: 1.0
+  dice_loss_coef: 2.0

@@ -1,0 +1,14 @@
+.DS_STORE
+/.vscode
+.python-version
+*.out
+*.pcd
+/saved
+/ckpt
+/logs
+__pycache__/
+/data/semantic_kitti
+/outputs/*
+/wandb
+/datasets/preprocessing/*.json
+/datasets/preprocessing/*.yaml
